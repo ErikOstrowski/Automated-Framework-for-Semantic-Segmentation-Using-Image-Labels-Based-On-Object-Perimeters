@@ -9,7 +9,7 @@ from PIL import Image, ImageOps
 cam_path = './Dataset/CAM_busi/'
 out_path = './Dataset/BoundaryFit_busi/'
 
-segs = './Dataset/USS_busi_slic/'
+segs = './Dataset/USS_busi_slic/benign/'
 # save np.load
 np_load_old = np.load
 # modify the default parameters of np.load
