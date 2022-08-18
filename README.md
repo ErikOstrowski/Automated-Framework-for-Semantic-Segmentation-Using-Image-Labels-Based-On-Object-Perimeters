@@ -33,10 +33,8 @@ Please create the following folder inside the Dataset folder:
 - USS_quick
 - USS_slic
 Please create the following folder inside the Dataset folder with the sub folder 'benign' inside:
-- USS_busi_slic
-|_ benign
-- USS_busi_quick
-|_ benign
+- USS_busi_slic/benign
+- USS_busi_quick/benign
 ## Download PASCAL VOC 2012 devkit
 Follow instructions in http://host.robots.ox.ac.uk/pascal/VOC/voc2012/#devkit,
 copy the VOC2012 folder into the Dataset folder.
@@ -130,7 +128,7 @@ python3 evaluate_busi.py
 
 
 ## Class by class state-of-the-art comparison
-![Results](./res/Perf_comp.pdf)
+![Results](./res/Perf_comp.jpg)
 
 
 ## Download models and masks
