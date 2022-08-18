@@ -13,7 +13,7 @@ Weakly Supervised Semantic Segmentation (WSSS) with only image-level supervision
 <br>
 
 # Prerequisite
-- Python 3.8, PyTorch 1.7.0, and more in requirements.txt
+- Python 3.8, PyTorch 1.7.0, anaconda3 and more in requirements.txt
 - CUDA 10.1, cuDNN 7.6.5
 - 2 Nvidia GeForce GTX 1080 Ti GPUs
 
@@ -37,11 +37,12 @@ copy the ResNeSt101@Puzzle@optimal.pth model into the experiments/models folder.
 # Evaluation of VOC2012
 
 ## 1. Inference the PuzzleCAM model and create Edge maps
-1.1 Inference the PuzzleCAM model
+1.1 Create a 'experiments' folder and inside it a 'models' and a 'predictions' folder
+1.2 Inference the PuzzleCAM model
 ```bash
 CUDA_VISIBLE_DEVICES=0 python3 inference_classification.py --architecture resnest101 --tag ResNeSt101@Puzzle@optimal --domain train_aug --data_dir $your_dir
 ```
-1.2 Create USS segmentations and edge maps
+1.3 Create USS segmentations and edge maps
 ```bash
 python3 USS.py
 python3 USS.py --segment quick
