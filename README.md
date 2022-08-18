@@ -129,7 +129,14 @@ python3 evaluate_busi.py
 
 ## Class by class state-of-the-art comparison
 ![Results](./res/1.png)
-
+# References
+- Ahn, J.; and Kwak, S. 2018. Learning pixel-level semantic affinity with image-level supervision for weakly supervised semantic segmentation. In Proceedings of the IEEE conference on computer vision and pattern recognition, 4981–4990.
+- Chang, Y.-T.; Wang, Q.; Hung, W.-C.; Piramuthu, R.; Tsai, Y.-H.; and Yang, M.-H. 2020. Weakly-supervised semantic segmentation via sub-category exploration. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 8991–9000.
+- Everingham, M.; Van Gool, L.; Williams, C. K.; Winn, J.; and Zisserman, A. 2010. The pascal visual object classes (voc) challenge. International journal of computer vision, 88(2): 303–338. 
+- Jo, S.; and Yu, I.-J. 2021. Puzzle-cam: Improved localization via matching partial and full features. In 2021 IEEE International Conference on Image Processing (ICIP), 639–643. IEEE.
+- Lee, J.; Kim, E.; Lee, S.; Lee, J.; and Yoon, S. 2019. Ficklenet: Weakly and semi-supervised semantic image segmentation using stochastic inference. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 5267–5276.
+- Wang, X.; You, S.; Li, X.; and Ma, H. 2018. Weakly-supervised semantic segmentation by iteratively mining common object features. In Proceedings of the IEEE conference on computer vision and pattern recognition, 1354–1362.
+- Zeng, Y.; Zhuge, Y.; Lu, H.; and Zhang, L. 2019. Joint learning of saliency detection and weakly supervised semantic segmentation. In Proceedings of the IEEE/CVF international conference on computer vision, 7223–7233.
 
 ## Download models and masks
 
