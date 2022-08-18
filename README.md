@@ -43,7 +43,7 @@ Follow instructions in https://www.kaggle.com/datasets/anaselmasry/datasetbusiwi
 copy the Dataset_BUSI_with_GT folder into the Dataset folder.
 ## Download PuzzleCAM model
 Download the PuzzleCAM models from the experiments.zip in https://github.com/OFRIN/PuzzleCAM,
-copy the ResNeSt101@Puzzle@optimal.pth model into the experiments/models folder.
+copy the 'ResNeSt101@Puzzle@optimal.pth' model into the experiments/models folder.
 
 # Evaluation of VOC2012
 
