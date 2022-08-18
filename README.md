@@ -30,10 +30,13 @@ Please create the following folder inside the Dataset folder:
 - CAM_busi
 - EM_quick
 - EM_slic
-- USS_busi_slic
-- USS_busi_quick
 - USS_quick
 - USS_slic
+Please create the following folder inside the Dataset folder with the sub folder 'benign' inside:
+- USS_busi_slic
+|_ benign
+- USS_busi_quick
+|_ benign
 ## Download PASCAL VOC 2012 devkit
 Follow instructions in http://host.robots.ox.ac.uk/pascal/VOC/voc2012/#devkit,
 copy the VOC2012 folder into the Dataset folder.
