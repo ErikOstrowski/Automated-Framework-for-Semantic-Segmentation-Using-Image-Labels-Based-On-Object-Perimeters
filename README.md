@@ -123,7 +123,7 @@ python3 evaluate_busi.py
 ## Download models and masks
 
 - "experiments.zip" includes trained weights (AffinityNet and DeepLabv3+), masks for training (to train DeepLabV3+), and final evaluation masks (val and test VOC2012, BUSI benign)
-[experiments.zip]([https://drive.google.com/file/](https://drive.google.com/file/d/15sqVeYTf3MpKM0g0zdfFU2pYf7kz76Yo/view?usp=sharing)
+[experiments.zip]([https://drive.google.com/file/](https://drive.google.com/file/d/15sqVeYTf3MpKM0g0zdfFU2pYf7kz76Yo/view?usp=sharing))
 
 - "BoundaryFit_busi.zip" include the results of BoundaryFit evaluation of the BUSI dataset, copy into the 'Dataset' folder for evaluation
 [BoundaryFit_busi.zip](https://drive.google.com/file/d/16fRD4D91CwcEeMjxQMQOCkxZnaPTg6L9/view?usp=sharing)
