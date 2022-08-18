@@ -117,7 +117,7 @@ python3 BUSI_USS.py --segment quick
 ```
 1.2 Inference GradCAM
 ```bash
-python3 Grad_cam.py
+python3 grad_cam.py
 ```
 ## 2. Perform BondaryFit
 ```bash
