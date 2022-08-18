@@ -12,6 +12,16 @@ from skimage.color import rgb2gray
 import torchvision
 import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument("--segment", default='slic', type=str)
+args = parser.parse_args()
+
+
+
+
+segment = args.segment
+
+
 
 
 if segment == 'quick':
@@ -23,7 +33,7 @@ else:
 pat = './Dataset/Dataset_BUSI_with_GT/IMG/benign/'
 
 
-segment = args.segment
+
 
 
 
