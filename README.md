@@ -8,7 +8,7 @@ The official implementation of "BoundaryCAM: A Boundary-based Refinement Framewo
 Weakly Supervised Semantic Segmentation (WSSS) with only image-level supervision is a promising approach to deal with the need of Segmentation networks, especially for generating large number of pixel-wise masks in a given dataset. However, most state-of-the-art image-level WSSS techniques lack an understanding of the geometric features embedded in the images since the network cannot derive any object boundary information from just image-level labels. We define boundary information here as the line separating the object and background. To address this drawback, we propose our novel BoundaryCAM framework, which deploys state-of-the-art class activation maps combined with various post-processing techniques in order to achieve fine-grained higher-accuracy segmentation masks. To achieve this, we investigate a wide-range of state-of-the-art unsupervised semantic segmentation networks and edge detection techniques to construct a boundary map, which enables BoundaryCAM to predict object locations with sharper boundaries. By applying our method to WSSS predictions, we were able to achieve up to 1.5% improvements, even to the benefit of already known edge-based methods like AffinityNet. We conduct exhaustive analysis to illustrate that BoundaryCAM enhances existing state-of-the-art WSSS methods.
 
 ## Overview
-![Overall architecture](./res/Framework.pdf)
+![Overall architecture](./res/Framework.jpg)
 
 <br>
 
