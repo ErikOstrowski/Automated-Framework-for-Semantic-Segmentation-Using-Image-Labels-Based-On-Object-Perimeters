@@ -21,7 +21,6 @@ Weakly Supervised Semantic Segmentation (WSSS) with only image-level supervision
 ## Install python dependencies
 ```bash
 python3 -m pip install -r requirements.txt
-pip3 install scikit-build
 ```
 ## Create folder structure
 Please create the following folder inside the Dataset folder:
