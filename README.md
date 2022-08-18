@@ -15,7 +15,6 @@ Weakly Supervised Semantic Segmentation (WSSS) with only image-level supervision
 # Prerequisite
 - Python 3.8, PyTorch 1.7.0, anaconda3 and more in requirements.txt
 - CUDA 10.1, cuDNN 7.6.5
-- 2 Nvidia GeForce GTX 1080 Ti GPUs
 
 # Usage
 
@@ -23,7 +22,18 @@ Weakly Supervised Semantic Segmentation (WSSS) with only image-level supervision
 ```bash
 python3 -m pip install -r requirements.txt
 ```
-
+## Create folder structure
+Please create the following folder inside the Dataset folder:
+- BoundaryFit_busi
+- BoundaryFit_quick
+- BoundaryFit_slic
+- CAM_busi
+- EM_quick
+- EM_slic
+- USS_busi_slic
+- USS_busi_quick
+- USS_quick
+- USS_slic
 ## Download PASCAL VOC 2012 devkit
 Follow instructions in http://host.robots.ox.ac.uk/pascal/VOC/voc2012/#devkit,
 copy the VOC2012 folder into the Dataset folder.
@@ -61,7 +71,7 @@ python3 Combine_BoundaryFit.py
 ```
 
 
-## 3. Perform BoundaryFit
+## 3. Apply AffinityNet to refine the generated CAMs
 3.1. Make affinity labels to train AffinityNet.
 ```bash
 CUDA_VISIBLE_DEVICES=0 python3 inference_classification.py --architecture resnest101 --tag Combined_BoundaryCAM --domain train_aug --data_dir $your_dir
