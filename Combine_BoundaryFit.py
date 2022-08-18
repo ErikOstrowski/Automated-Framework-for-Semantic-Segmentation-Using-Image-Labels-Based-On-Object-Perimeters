@@ -177,7 +177,7 @@ if __name__ == '__main__':
 
         if args.domain == 'train_aug':
             args.domain = 'train'
-    print("python3 evaluate.py --experiment_name {} --domain {}".format(experiment_name, args.domain))
+    
 
 
 
