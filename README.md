@@ -117,7 +117,7 @@ python3 evaluate_busi.py
 
 
 ## Class by class state-of-the-art comparison
-![Overall architecture](./res/Perf_comp.pdf)
+![Results](./res/Perf_comp.pdf)
 
 
 ## Download models and masks
