@@ -127,9 +127,9 @@ python3 evaluate_busi.py
 ```
 
 
-## Class by class state-of-the-art comparison
+# Class by class state-of-the-art comparison
 ![Results](./res/1.png)
-# References
+## References
 - Ahn, J.; and Kwak, S. 2018. Learning pixel-level semantic affinity with image-level supervision for weakly supervised semantic segmentation. In Proceedings of the IEEE conference on computer vision and pattern recognition, 4981–4990.
 - Chang, Y.-T.; Wang, Q.; Hung, W.-C.; Piramuthu, R.; Tsai, Y.-H.; and Yang, M.-H. 2020. Weakly-supervised semantic segmentation via sub-category exploration. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 8991–9000.
 - Everingham, M.; Van Gool, L.; Williams, C. K.; Winn, J.; and Zisserman, A. 2010. The pascal visual object classes (voc) challenge. International journal of computer vision, 88(2): 303–338. 
