@@ -1,14 +1,16 @@
 
-# BoundaryCAM
-The official implementation of "BoundaryCAM: A Boundary-based Refinement Framework for Weakly Supervised Semantic Segmentation".
+# Automated Framework for Semantic Segmentation Using Image Labels Based On Object Perimeters
+
 
 
 
 ## Abstract
-Weakly Supervised Semantic Segmentation (WSSS) with only image-level supervision is a promising approach to deal with the need of Segmentation networks, especially for generating large number of pixel-wise masks in a given dataset. However, most state-of-the-art image-level WSSS techniques lack an understanding of the geometric features embedded in the images since the network cannot derive any object boundary information from just image-level labels. We define boundary information here as the line separating the object and background. To address this drawback, we propose our novel BoundaryCAM framework, which deploys state-of-the-art class activation maps combined with various post-processing techniques in order to achieve fine-grained higher-accuracy segmentation masks. To achieve this, we investigate a wide-range of state-of-the-art unsupervised semantic segmentation networks and edge detection techniques to construct a boundary map, which enables BoundaryCAM to predict object locations with sharper boundaries. By applying our method to WSSS predictions, we were able to achieve up to 1.5% improvements, even to the benefit of already known edge-based methods like AffinityNet. We conduct exhaustive analysis to illustrate that BoundaryCAM enhances existing state-of-the-art WSSS methods.
+Achieving high-quality semantic segmentation predictions using only image-level labels enables a new level of real-world applicability. Although state-of-the-art networks successfully deliver reliable predictions, the amount of handcrafted pixel-wise annotations to enable these results are not feasible in many real-world applications. Hence, several works have already targeted this bottleneck. Most use classifier-based networks like Class Activation Maps~\cite{CAM} (CAMs) as a base. However, to address CAM's weaknesses of fuzzy borders and incomplete predictions, most state-of-the-art approaches rely only on either adding regulations to the classifier loss or using pixel-similarity-based refinement after the fact. Therefore, we propose a framework that introduces an additional module that leverages object perimeters for improved saliency. We define object perimeter information as the line separating the object and background. Our new PerimeterFit module will be applied to pre-refine the CAM predictions before using the pixel-similarity-based network.
+In this way, our PerimeterFit increases the quality of the CAM prediction while simultaneously improving the false negative rate. We investigated a wide range of state-of-the-art unsupervised semantic segmentation networks and edge detection techniques to create useful perimeter maps, which enable our framework to predict object locations with sharper perimeters. We achieved up to 1.5% improvement over frameworks without our PerimeterFit module.
+We conduct an exhaustive analysis to illustrate that our enhances existing state-of-the-art frameworks for image-level-based semantic segmentation.
 
 ## Overview
-![Overall architecture](./res/Framework.jpg)
+![Overall architecture](./figures/Framework.png)
 
 <br>
 
@@ -24,23 +26,15 @@ python3 -m pip install -r requirements.txt
 ```
 ## Create folder structure
 Please create the following folder inside the Dataset folder:
-- BoundaryFit_busi
-- BoundaryFit_quick
-- BoundaryFit_slic
-- CAM_busi
-- EM_quick
-- EM_slic
+- PerimeterFit_quick
+- PerimeterFit_slic
+- PM_quick
+- PM_slic
 - USS_quick
 - USS_slic
-Please create the following folder inside the Dataset folder with the sub folder 'benign' inside:
-- USS_busi_slic/benign
-- USS_busi_quick/benign
 ## Download PASCAL VOC 2012 devkit
 Follow instructions in http://host.robots.ox.ac.uk/pascal/VOC/voc2012/#devkit,
 copy the VOC2012 folder into the Dataset folder.
-## Download BUSI Dataset
-Follow instructions in https://www.kaggle.com/datasets/anaselmasry/datasetbusiwithgt,
-copy the Dataset_BUSI_with_GT folder into the Dataset folder.
 ## Download PuzzleCAM model
 Download the PuzzleCAM models from the experiments.zip in https://github.com/OFRIN/PuzzleCAM,
 copy the ResNeSt101@Puzzle@optimal.pth model into the experiments/models folder.
@@ -60,22 +54,22 @@ python3 USS.py --segment quick
 python3 Edge_detection.py
 python3 Edge_detection.py --segment quick
 ```
-## 2. Perform BoundaryFit
-2.1 Create BoundaryFit masks
+## 2. Perform PerimeterFit
+2.1 Create PerimeterFit masks
 ```bash
-python3 BoundaryFit.py
-python3 BoundaryFit.py --segment quick
+python3 PerimeterFit.py
+python3 PerimeterFit.py --segment quick
 ```
 2.2 Combine masks
 ```bash
-python3 Combine_BoundaryFit.py
+python3 Combine_PerimeterFit.py
 ```
 
 
 ## 3. Apply AffinityNet to refine the generated CAMs
 3.1. Make affinity labels to train AffinityNet.
 ```bash
-CUDA_VISIBLE_DEVICES=0 python3 inference_classification.py --architecture resnest101 --tag Combined_BoundaryCAM --domain train_aug --data_dir $your_dir
+CUDA_VISIBLE_DEVICES=0 python3 inference_classification.py --architecture resnest101 --tag Combined_CAM --domain train_aug --data_dir $your_dir
 python3 make_affinity_labels.py --experiment_name ResNeSt101@Puzzle@optimal@train@scale=0.5,1.0,1.5,2.0 --domain train_aug --fg_threshold 0.60 --bg_threshold 0.40 --data_dir $your_dir
 ```
 
@@ -105,30 +99,8 @@ python3 evaluate.py --experiment_name DeepLabv3+@ResNeSt-101@Fix@GN@val@scale=0.
 
 
 
-# Evaluation of BUSI
-
-## 1. Inferece Grad cam
-1.1 Create USS segementations
-```bash
-python3 BUSI_USS.py
-python3 BUSI_USS.py --segment quick
-```
-1.2 Inference GradCAM
-```bash
-python3 grad_cam.py
-```
-## 2. Perform BondaryFit
-```bash
-python3 BoundaryFit_busi.py
-```
-## 3. Evaluate Results
-```bash
-python3 evaluate_busi.py
-```
-
-
-# Class by class state-of-the-art comparison
-![Results](./res/1.png)
+# Example images for comparison with PuzzleCAM
+![Results](./figures/Examples.png)
 ## References
 - Ahn, J.; and Kwak, S. 2018. Learning pixel-level semantic affinity with image-level supervision for weakly supervised semantic segmentation. In Proceedings of the IEEE conference on computer vision and pattern recognition, 4981–4990.
 - Chang, Y.-T.; Wang, Q.; Hung, W.-C.; Piramuthu, R.; Tsai, Y.-H.; and Yang, M.-H. 2020. Weakly-supervised semantic segmentation via sub-category exploration. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 8991–9000.
