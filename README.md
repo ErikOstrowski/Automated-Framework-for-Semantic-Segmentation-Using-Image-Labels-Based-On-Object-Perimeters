@@ -69,13 +69,12 @@ python3 Combine_PerimeterFit.py
 ## 3. Apply AffinityNet to refine the generated CAMs
 3.1. Make affinity labels to train AffinityNet.
 ```bash
-CUDA_VISIBLE_DEVICES=0 python3 inference_classification.py --architecture resnest101 --tag Combined_CAM --domain train_aug --data_dir $your_dir
 python3 make_affinity_labels.py --experiment_name Combined_CAM --domain train_aug --fg_threshold 0.60 --bg_threshold 0.40 --data_dir $your_dir
 ```
 
 3.2. Train AffinityNet.
 ```bash
-CUDA_VISIBLE_DEVICES=0 python3 train_affinitynet.py --architecture resnest101 --tag AffinityNet@ResNeSt-101@Puzzle --label_name ResNeSt101@Puzzle@optimal@train@scale=0.5,1.0,1.5,2.0 --data_dir $your_dir
+CUDA_VISIBLE_DEVICES=0 python3 train_affinitynet.py --architecture resnest101 --tag AffinityNet@ResNeSt-101@Puzzle --label_name Combined_CAM@aff_fg=0.60_bg=0.40 --data_dir $your_dir
 ```
 
 ## 4. Train the segmentation model using the pseudo-labels
