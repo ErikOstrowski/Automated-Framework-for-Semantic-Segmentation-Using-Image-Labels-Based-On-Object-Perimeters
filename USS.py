@@ -20,7 +20,7 @@ segment = args.segment
 
 
 if segment == 'quick':
-	output_dir = './Dataset/USS_quickshift/'
+	output_dir = './Dataset/USS_quick/'
 else:
 	output_dir = './Dataset/USS_slic/'
 pat = './Dataset/VOC2012/JPEGImages/'
