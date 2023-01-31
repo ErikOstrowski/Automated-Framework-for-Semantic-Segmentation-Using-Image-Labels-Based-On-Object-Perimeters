@@ -60,8 +60,8 @@ parser.add_argument('--scales', default='0.5,1.0,1.5,2.0', type=str)
 
 
 
-slic = './Dataset/PerimeterFit_slic' # 
-quick = './Dataset/PerimeterFit_quick' # 
+slic = './Dataset/PerimeterFit_slic/' # 
+quick = './Dataset/PerimeterFit_quick/' # 
 
 
 
