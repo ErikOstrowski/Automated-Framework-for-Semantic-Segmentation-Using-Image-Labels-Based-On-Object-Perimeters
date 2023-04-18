@@ -1,5 +1,5 @@
 
-# Perimeter based Semantic Segmentation Using Image Labels Framework
+# SILOP: An Automated Framework for Semantic Segmentation Using Image Labels Based on Object Perimeters
 
 
 
